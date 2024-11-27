@@ -1,0 +1,57 @@
+<!-- views/partials/header.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page Turner Bookstore</title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1><a href="/">Page Turner Bookstore</a></h1>
+    <!-- Navigation Menu -->
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/browse">Browse Books</a></li>
+        <li><a href="/best-sellers">Best Sellers</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <% if (user) { %>
+          <li><a href="/users/dashboard">Dashboard</a></li>
+          <li><a href="/users/logout">Logout</a></li>
+        <% } else { %>
+          <li><a href="/users/login">Login</a></li>
+          <li><a href="/users/register">Register</a></li>
+        <% } %>
+        <li><a href="/cart"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+      </ul>
+    </nav>
+    <!-- Search Form -->
+    <form action="/search" method="GET" class="search-form">
+      <input type="text" name="q" placeholder="Search books..." required>
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </header>
+
+  <!-- Flash Messages -->
+  <% if (success_msg) { %>
+    <div class="alert alert-success">
+      <%= success_msg %>
+    </div>
+  <% } %>
+
+  <% if (error_msg) { %>
+    <div class="alert alert-danger">
+      <%= error_msg %>
+    </div>
+  <% } %>
+
+  <% if (error) { %>
+    <div class="alert alert-danger">
+      <%= error %>
+    </div>
+  <% } %>

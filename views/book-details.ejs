@@ -1,0 +1,22 @@
+<!-- views/book-details.ejs -->
+
+<%- include('partials/header') %>
+
+<section class="book-details">
+  <div class="book">
+    <img src="<%= book.image %>" alt="<%= book.title %>">
+    <div class="book-info">
+      <h2><%= book.title %></h2>
+      <p><strong>Author:</strong> <%= book.author %></p>
+      <p><strong>Genre:</strong> <%= book.genre %></p>
+      <p><strong>Description:</strong></p>
+      <p><%= book.description %></p>
+      <p><strong>Price:</strong> $<%= book.price.toFixed(2) %></p>
+      <form action="/add-to-cart/<%= book._id %>" method="POST">
+        <button type="submit" class="btn">Add to Cart</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

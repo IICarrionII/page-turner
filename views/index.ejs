@@ -1,0 +1,32 @@
+<!-- views/index.ejs -->
+
+<%- include('partials/header') %>
+
+<!-- Main Banner -->
+<section class="banner">
+  <h2>Welcome to Page Turner</h2>
+  <p>Your one-stop shop for all your reading needs.</p>
+  <a href="/browse" class="btn">Shop Now</a>
+</section>
+
+<!-- Featured Books -->
+<section class="featured-books">
+  <h2>Featured Books</h2>
+  <div class="books-container">
+    <% featuredBooks.forEach(function(book) { %>
+      <div class="book">
+        <a href="/books/<%= book._id %>">
+          <img src="<%= book.image %>" alt="<%= book.title %>">
+          <h3><%= book.title %></h3>
+        </a>
+        <p>by <%= book.author %></p>
+        <p>$<%= book.price.toFixed(2) %></p>
+        <form action="/add-to-cart/<%= book._id %>" method="POST">
+          <button type="submit" class="btn">Add to Cart</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

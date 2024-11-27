@@ -1,0 +1,28 @@
+<!-- views/search-results.ejs -->
+
+<%- include('partials/header') %>
+
+<section class="search-results">
+  <h2>Search Results for "<%= query %>"</h2>
+  <div class="books-container">
+    <% if (books.length > 0) { %>
+      <% books.forEach(function(book) { %>
+        <div class="book">
+          <a href="/books/<%= book._id %>">
+            <img src="<%= book.image %>" alt="<%= book.title %>">
+            <h4><%= book.title %></h4>
+          </a>
+          <p>by <%= book.author %></p>
+          <p>$<%= book.price.toFixed(2) %></p>
+          <form action="/add-to-cart/<%= book._id %>" method="POST">
+            <button type="submit" class="btn">Add to Cart</button>
+          </form>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p>No books found matching your search.</p>
+    <% } %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

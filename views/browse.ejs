@@ -1,0 +1,25 @@
+<!-- views/browse.ejs -->
+
+<%- include('partials/header') %>
+
+<section class="browse-books">
+  <h2>Browse Books</h2>
+  <div class="books-container">
+    <% books.forEach(function(book) { %>
+      <div class="book">
+        <a href="/books/<%= book._id %>">
+          <img src="<%= book.image %>" alt="<%= book.title %>">
+          <h4><%= book.title %></h4>
+        </a>
+        <p>by <%= book.author %></p>
+        <p>Genre: <%= book.genre %></p>
+        <p>$<%= book.price.toFixed(2) %></p>
+        <form action="/add-to-cart/<%= book._id %>" method="POST">
+          <button type="submit" class="btn">Add to Cart</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

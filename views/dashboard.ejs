@@ -1,0 +1,11 @@
+<!-- views/dashboard.ejs -->
+
+<%- include('partials/header') %>
+
+<section class="dashboard">
+  <h2>Welcome, <%= user.name %>!</h2>
+  <p>This is your dashboard where you can view your profile and order history.</p>
+  <a href="/users/logout" class="btn">Logout</a>
+</section>
+
+<%- include('partials/footer') %>

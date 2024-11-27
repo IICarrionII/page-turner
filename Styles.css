@@ -1,0 +1,312 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #343a40;
+    padding: 20px;
+    color: #fff;
+    position: sticky;
+    top: 0;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+/* Banner Styling */
+.banner {
+    background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 150px 20px;
+}
+
+.banner h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.banner .btn {
+    background-color: #ffc107;
+    color: #343a40;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.banner .btn:hover {
+    background-color: #e0a800;
+}
+
+/* Featured Books Styling */
+.featured-books {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.featured-books h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.books-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.book {
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.book img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.book h3 {
+    margin: 10px 0 5px;
+    font-size: 1.5em;
+}
+
+.book p {
+    color: #777;
+    font-size: 1em;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .books-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book {
+        width: 80%;
+    }
+}/* Existing styles remain unchanged */
+
+/* Additional Styles for Browse Books Page */
+.browse-books {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.genre-container {
+    margin-top: 30px;
+}
+
+.genre {
+    margin-bottom: 50px;
+}
+
+.genre h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.genre .books-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.genre .book {
+    width: 22%;
+    margin-bottom: 20px;
+}
+
+.genre .book img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.genre .book h4 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+}
+
+.genre .book p {
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* Styles for Best Sellers Page */
+.best-sellers {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.best-sellers h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.best-sellers .books-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.best-sellers .book {
+    width: 28%;
+    margin-bottom: 20px;
+}
+
+.best-sellers .book img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.best-sellers .book h4 {
+    margin: 10px 0 5px;
+    font-size: 1.5em;
+}
+
+.best-sellers .book p {
+    color: #777;
+    font-size: 1em;
+}
+
+/* Styles for Contact Us Page */
+.contact-us {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-us h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.contact-us p {
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form .btn {
+    background-color: #ffc107;
+    color: #343a40;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form .btn:hover {
+    background-color: #e0a800;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .genre .book,
+    .best-sellers .book {
+        width: 45%;
+    }
+}
+
+@media (max-width: 576px) {
+    .genre .book,
+    .best-sellers .book {
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,40 @@
+<!-- views/checkout.ejs -->
+
+<%- include('partials/header') %>
+
+<section class="checkout">
+  <h2>Checkout</h2>
+  <% if (cart && cart.items.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Book</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% cart.items.forEach(item => { %>
+          <tr>
+            <td><%= item.book.title %></td>
+            <td><%= item.quantity %></td>
+            <td>$<%= (item.book.price * item.quantity).toFixed(2) %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="2">Total</th>
+          <th>$<%= cart.totalPrice.toFixed(2) %></th>
+        </tr>
+      </tfoot>
+    </table>
+    <form action="/checkout" method="POST">
+      <button type="submit" class="btn">Place Order</button>
+    </form>
+  <% } else { %>
+    <p>Your cart is empty.</p>
+  <% } %>
+</section>
+
+<%- include('partials/footer') %>

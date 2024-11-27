@@ -1,0 +1,31 @@
+<!-- views/login.ejs -->
+
+<%- include('partials/header') %>
+
+<section class="auth-form">
+  <h2>Login</h2>
+  <% if (error_msg) { %>
+    <div class="alert alert-danger">
+      <p><%= error_msg %></p>
+    </div>
+  <% } %>
+  <% if (error) { %>
+    <div class="alert alert-danger">
+      <p><%= error %></p>
+    </div>
+  <% } %>
+  <form action="/users/login" method="POST">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" name="password" required>
+    </div>
+    <button type="submit" class="btn">Login</button>
+  </form>
+  <p>Don't have an account? <a href="/users/register">Register here</a></p>
+</section>
+
+<%- include('partials/footer') %>
